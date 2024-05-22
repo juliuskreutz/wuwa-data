@@ -38,8 +38,8 @@ with open("achievements.csv", "w", newline="") as f:
             [
                 text_map.get(achievement["Name"], ""),
                 text_map.get(achievement["Desc"], ""),
-                achievement["ID"],
-                achievement["GroupID"],
+                achievement["Id"],
+                achievement["GroupId"],
                 achievement["Level"],
                 achievement["Hidden"],
                 achievement["IconPath"],
