@@ -10,7 +10,7 @@ achievements_data = requests.get(
 
 # Define a sorting function to sort by GroupID first, then by ID
 def sort_key(achievement):
-    return int(achievement["GroupID"]), int(achievement["ID"])
+    return int(achievement["GroupId"]), int(achievement["ID"])
 
 with open("achievements.csv", "w", newline="") as f:
     writer = csv.writer(f)
