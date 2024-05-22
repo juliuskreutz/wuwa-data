@@ -1,5 +1,5 @@
 import requests
-import json
+import csv
 
 text_map = requests.get(
     "https://raw.githubusercontent.com/Dimbreath/WutheringData/master/TextMap/en/MultiText.json"
@@ -8,22 +8,36 @@ achievements_data = requests.get(
     "https://raw.githubusercontent.com/Dimbreath/WutheringData/master/ConfigDB/Achievement.json"
 ).json()
 
-achievements = []
-for achievement in achievements_data:
-    achievements.append(
-        {
-            "name": text_map.get(achievement["Name"], ""),
-            "description": text_map.get(achievement["Desc"], ""),
-            "id": achievement["Id"],
-            "group_id": achievement["GroupId"],
-            "level": achievement["Level"],
-            "hidden": achievement["Hidden"],
-            "icon_path": achievement["IconPath"],
-            "override_drop_id": achievement["OverrideDropId"],
-            "next_link": achievement["NextLink"],
-            "client_trigger": achievement["ClientTrigger"],
-        }
+with open("achievements.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+
+    writer.writerow(
+        [
+            "Name",
+            "Desc",
+            "ID",
+            "GroupID",
+            "Level",
+            "Hidden",
+            "IconPath",
+            "OverrideDropId",
+            "NextLink",
+            "ClientTrigger",
+        ]
     )
 
-with open("achievements.json", "w") as f:
-    json.dump(achievements, f)
+    for achievement in achievements_data:
+        writer.writerow(
+            [
+                text_map.get(achievement["Name"], ""),
+                text_map.get(achievement["Desc"], ""),
+                achievement["Id"],
+                achievement["GroupId"],
+                achievement["Level"],
+                achievement["Hidden"],
+                achievement["IconPath"],
+                achievement["OverrideDropId"],
+                achievement["NextLink"],
+                achievement["ClientTrigger"],
+            ]
+        )
