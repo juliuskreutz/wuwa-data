@@ -11,8 +11,8 @@ achievements_data = requests.get(
 # Define mappings for GroupId to AchievementCategory and AchievementGroup keys
 category_map = {
     (1001, 1002, 1004): 'AchievementCategory_1_Name',
-    (2001, 2003): 'AchievementCategory_2_Name',
-    (3001, 3002, 3003, 3004): 'AchievementCategory_3_Name',
+    (2001, 2002, 2003, 2004): 'AchievementCategory_2_Name',
+    (3001, 3002, 3003, 3004, 3005): 'AchievementCategory_3_Name',
     (4001, 4002): 'AchievementCategory_4_Name',
 }
 
@@ -21,7 +21,9 @@ group_map = {
     1002: 'AchievementGroup_1002_Name',
     1004: 'AchievementGroup_1004_Name',
     2001: 'AchievementGroup_2001_Name',
+    2002: 'AchievementGroup_2002_Name',
     2003: 'AchievementGroup_2003_Name',
+    2004: 'AchievementGroup_2004_Name',
     3001: 'AchievementGroup_3001_Name',
     3005: 'AchievementGroup_3005_Name',
     3002: 'AchievementGroup_3002_Name',
