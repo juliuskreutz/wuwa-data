@@ -81,6 +81,10 @@ with open("achievements.csv", "w", newline="") as f:
             category = get_category(group_id)
             group = get_group(group_id)
         
+        next_link = achievement["NextLink"]
+        if next_link == -1:
+            next_link = ""
+
         writer.writerow(
             [
                 category,
@@ -91,6 +95,6 @@ with open("achievements.csv", "w", newline="") as f:
                 achievement["GroupId"],
                 achievement["Level"],
                 achievement["Hidden"],
-                achievement["NextLink"],
+                next_link,
             ]
         )
