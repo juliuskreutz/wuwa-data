@@ -23,10 +23,7 @@ with open("achievements.csv", "w", newline="") as f:
             "GroupID",
             "Level",
             "Hidden",
-            "IconPath",
-            "OverrideDropId",
             "NextLink",
-            "ClientTrigger",
         ]
     )
 
@@ -42,9 +39,6 @@ with open("achievements.csv", "w", newline="") as f:
                 achievement["GroupId"],
                 achievement["Level"],
                 achievement["Hidden"],
-                achievement["IconPath"],
-                achievement["OverrideDropId"],
                 achievement["NextLink"],
-                achievement["ClientTrigger"],
             ]
         )
