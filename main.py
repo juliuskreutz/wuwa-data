@@ -59,13 +59,13 @@ with open("achievements.csv", "w", newline="") as f:
         [
             "Category",
             "Group",
+            "Level",
             "Name",
             "Desc",
+            "NextLink",
+            "Hidden",
             "ID",
             "GroupID",
-            "Level",
-            "Hidden",
-            "NextLink",
         ]
     )
 
@@ -90,12 +90,12 @@ with open("achievements.csv", "w", newline="") as f:
             [
                 category,
                 group,
+                achievement["Level"],
                 text_map.get(achievement["Name"], ""),
                 text_map.get(achievement["Desc"], ""),
+                next_link,
+                achievement["Hidden"],
                 achievement["Id"],
                 achievement["GroupId"],
-                achievement["Level"],
-                achievement["Hidden"],
-                next_link,
             ]
         )
